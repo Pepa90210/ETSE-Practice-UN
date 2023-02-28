@@ -20,9 +20,3 @@ section{
   justify-content: center;
   align-items: center;
 }
-
-.loginContainer {
-  outline: 1px solid red;
-  width: 20rem;
-  height: 30rem;
-}
