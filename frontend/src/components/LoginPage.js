@@ -1,14 +1,15 @@
 import React from 'react'
 import { useState } from "react";
 // import { useDispatch } from "react-redux";
-import { Login } from "../Login";
+import { useLogin } from "../Login";
 import { useNavigate } from 'react-router-dom';
 import './LoginPage.css'
 
 const LoginPage = () => {
+    
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    const { login, isLoading, error} = useLogin();
 
     // const dispatch = useDispatch();
 
@@ -23,9 +24,11 @@ const LoginPage = () => {
         //     <Navigate to='/homepage' />
         // }
         let user = { username: userName, password: password }
-        localStorage.setItem('user', JSON.stringify(user));
-        console.log(localStorage.getItem('user'));
-        navigate("/homepage")
+        // localStorage.setItem('user', JSON.stringify(user));
+        // console.log(localStorage.getItem('user'));
+        
+        // navigate("/homepage")
+        return (login(userName, password))
     };
 
     return (

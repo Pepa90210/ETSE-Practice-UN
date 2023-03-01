@@ -1,17 +1,17 @@
 import {useState} from 'react';
 
-export const Login = async ({userName, password}) => {
+export const useLogin = async () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
 
-    const login = async (email, password) => {
+    const login = async (userName, password) => {
         setIsLoading(true);
         setError(null);
 
         const response = await fetch("/api/volunteers/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ userName, password }),
         });
         const json = await response.json();
 

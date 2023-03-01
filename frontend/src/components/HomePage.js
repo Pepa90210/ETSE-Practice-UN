@@ -8,9 +8,10 @@ const HomePage = () => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem('user'));
-        setUser(user)
-    }, [user?.username])
+        const userName = JSON.parse(localStorage.getItem('user'));
+        setUser(userName.username);
+        // setUser(user)
+    }, [setUser])
 
     if (!user) return (<div>You are not logged in</div>)
 
@@ -18,7 +19,7 @@ const HomePage = () => {
         <main>
             <section>
                 <div className="loginContainer">
-                    Welcome {user.username} You are now logged in!
+                    Welcome {user} You are now logged in!
                 </div>
             </section>
         </main>
