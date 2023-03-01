@@ -8,6 +8,13 @@ export const useLogin = async () => {
         setIsLoading(true);
         setError(null);
 
+        // if (userName === "bennyBoy" && password === "12345") {
+        //     let response = {"userName": userName, "password": password}
+        //     localStorage.setItem("user", JSON.stringify(json));
+        // } else {
+            
+        // }
+
         const response = await fetch("/api/volunteers/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },

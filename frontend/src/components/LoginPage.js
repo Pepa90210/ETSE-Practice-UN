@@ -23,12 +23,16 @@ const LoginPage = () => {
         // } else {
         //     <Navigate to='/homepage' />
         // }
-        let user = { username: userName, password: password }
+        // let user = { username: userName, password: password }
         // localStorage.setItem('user', JSON.stringify(user));
         // console.log(localStorage.getItem('user'));
-        
-        // navigate("/homepage")
-        return (login(userName, password))
+        await login(userName, password)
+        if (isLoading || error) {
+            console.log("**error message: ", error.message)
+        } else {
+            navigate("/homepage")
+        }
+        return
     };
 
     return (
