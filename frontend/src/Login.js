@@ -15,7 +15,7 @@ export const useLogin = async () => {
             
         // }
 
-        const response = await fetch("/api/volunteers/login", {
+        const response = await fetch("/api/volunteers", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ userName, password }),
